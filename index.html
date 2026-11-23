@@ -109,7 +109,42 @@ button[data-loupa-cookie-settings]:hover{opacity:1;text-decoration:underline}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>
-<!-- LOUPA_CONSENT_END --><!--loupa-fresh-start--><script data-loupa-fresh>(function(){var v="1795352007988";var done;
+<!-- LOUPA_CONSENT_END -->
+<!-- knotted:tags:start -->
+<!-- Pinterest Tag -->
+<script type="text/plain" data-loupa-consent="marketing">
+!function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(
+Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";
+var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];
+r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', '2612500733114');
+pintrk('page');
+</script>
+
+<script type="text/plain" data-loupa-consent="marketing">
+(function(){
+  var PAY = /(stripe\.com|buy\.stripe\.com|checkout\.stripe\.com|gumroad\.com|whop\.com|paypal\.(com|me)|lemonsqueezy\.com|payhip\.com|paddle\.com|shopify\.com|square(up)?\.com|ko-fi\.com|sellfy\.com|thrivecart\.com|samcart\.com|kajabi\.com|systeme\.io|copecart\.com|digistore24\.com|elopage\.com)/i;
+  var fired = {};
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var isPay = PAY.test(href) || a.hasAttribute('data-loupa-checkout');
+    if (!isPay) return;
+    var id = 'chk-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    if (fired[href] && Date.now() - fired[href] < 1500) return;
+    fired[href] = Date.now();
+    try {
+      if (window.pintrk) {
+        window.pintrk('track', 'checkout', { event_id: id, currency: 'USD', order_quantity: 1 });
+      }
+    } catch (err) {}
+  }, true);
+})();
+</script>
+<!-- End Pinterest Tag -->
+<!-- knotted:tags:end -->
+<!--loupa-fresh-start--><script data-loupa-fresh>(function(){var v="1795352007988";var done;
 window.__LOUPA_FRESH__=new Promise(function(res){done=res;});
 function ok(){done(false);}
 try{
